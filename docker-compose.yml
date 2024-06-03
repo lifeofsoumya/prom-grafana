@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  node: 
+    build: ./ # build from the dockerfile
+    ports: 
+      - "8080:8080"
+    networks:
+      - monitor
+  
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - monitor
+  
+
+networks:   
+  monitor:
