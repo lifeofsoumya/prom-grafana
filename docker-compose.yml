@@ -16,6 +16,15 @@ services:
       - "9090:9090"
     networks:
       - monitor
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - monitor
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
   
 
 networks:   
