@@ -1,5 +1,8 @@
 
-
+## To start do 
+``` 
+docker-compose up
+```
 
 
 ## On 2nd commit - metrics looks similar to this:
@@ -45,3 +48,6 @@ http_request_duration_ms_count{method="GET",route="/analytics",code="304"} 4
 
 ### Our motive for prometheus 
 - is to expose an endpoint /metrics with all the data like counter, gauge, histogram
+
+### Motive for grafana
+- Create dashboard from time series data of prometheus ( which prom generates from the metrics endpoint + cumulative counter + timings ) and plot charts from the dataset.
